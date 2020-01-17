@@ -12,11 +12,7 @@ class ClickhouseMigrationGenerator < ActiveRecord::Generators::MigrationGenerato
   private
 
   def db_migrate_path
-    if defined?(Rails.application) && Rails.application
-      configured_migrate_path || default_migrate_path
-    else
-      default_migrate_path
-    end
+    default_migrate_path
   end
 
   def default_migrate_path
